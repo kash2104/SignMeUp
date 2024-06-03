@@ -4,11 +4,13 @@ const { eventEndpoints } = require("../apis");
 
 const { GET_EVENTS_API } = eventEndpoints;
 
-export const getAllEvents = async () => {
+export const getAllEvents = async (sessionID) => {
   let result = [];
 
   try {
-    const response = await apiConnector("GET", GET_EVENTS_API);
+    const response = await apiConnector("GET", GET_EVENTS_API, null, {
+      Authorization: `Bearer ${sessionID}`,
+    });
 
     console.log("GET_EVENTS_API RESPONSE....", response);
 
