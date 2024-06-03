@@ -100,7 +100,9 @@ app.get(
   passport.authenticate("google", { failureRedirect: "/" }),
   function (req, res) {
     console.log("Logged In Successfully");
-    res.redirect("http://localhost:3000/signup/created/active");
+    res.redirect(
+      `http://localhost:3000/signup/created/all?user_key=${req.sessionID}`
+    );
   }
 );
 

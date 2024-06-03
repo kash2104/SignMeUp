@@ -8,10 +8,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<SignUpButton />} />
-        <Route
-          path="/signup/created/active/user_key/:profile.id"
-          element={<AllEvents />}
-        />
+        <Route path={`/signup/created/all`} element={<AllEvents />} />
       </Routes>
     </div>
   );
