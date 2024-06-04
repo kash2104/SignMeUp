@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SignUpButton = () => {
+  localStorage.setItem("session_id", "");
   return (
     <div className="w-11/12 flex mt-[20%] justify-center mx-auto">
       <Link

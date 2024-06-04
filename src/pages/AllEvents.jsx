@@ -7,6 +7,10 @@ const AllEvents = () => {
   const [searchParams] = useSearchParams();
   const sessionID = searchParams.get("user_key");
 
+  if (localStorage.getItem("session_id") === "") {
+    localStorage.setItem("session_id", sessionID);
+  }
+
   const [allEvents, setAllEvents] = useState([]);
 
   const [loading, setLoading] = useState(false);
@@ -30,13 +34,13 @@ const AllEvents = () => {
       //   console.log("allEvents", allEvents);
     };
 
-    if (sessionID) {
+    if (localStorage.getItem("session_id") === sessionID) {
       console.log("SessionID: ", sessionID);
       localStorage.setItem("session_id", sessionID);
 
       fetchAllEvents();
     }
-  }, [sessionID]);
+  }, []);
 
   return (
     <div>

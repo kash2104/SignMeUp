@@ -11,6 +11,8 @@ exports.auth = async (req, res, next) => {
       req.header("Authorization").replace("Bearer ") ||
       localStorage.getItem("session_id");
 
+    console.log("token: ", token);
+
     if (!token) {
       res.status(401).json({
         success: false,
