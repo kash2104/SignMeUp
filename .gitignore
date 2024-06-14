@@ -26,3 +26,5 @@ yarn-error.log*
 node_modules
 Server/node_modules
 Server/.env
+
+Server/controllers

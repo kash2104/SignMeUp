@@ -4,8 +4,14 @@ const eventSchema = new mongoose.Schema({
   title: {
     type: String,
   },
+  description: {
+    type: String,
+  },
   thumbnail: {
     type: String,
+  },
+  Images : {
+    type: [String],
   },
   starttime: {
     type: Number,
@@ -17,9 +23,6 @@ const eventSchema = new mongoose.Schema({
     type: Date,
   },
   signupurl: {
-    type: String,
-  },
-  mainimage: {
     type: String,
   },
   signupid: {
@@ -40,7 +43,38 @@ const eventSchema = new mongoose.Schema({
   enddate: {
     type: Date,
   },
-  contactname: {
+  contactName: {
+    type: String,
+  },
+  contactEmail: {
+    type: String,
+  },
+  organizer: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref : 'Organization',
+  },
+  subHeads: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  }],
+  cityManagers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  }],
+  participants: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  }],
+  location: {
+    type: String,
+  },
+  city : {
+    type: String,
+  },
+  state : {
     type: String,
   },
   slotmetrics: {

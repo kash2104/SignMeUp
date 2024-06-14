@@ -44,60 +44,20 @@ app.use(
   })
 );
 
-passport.use(User.createStrategy());
-passport.serializeUser(function (user, done) {
-  done(null, user.id);
-});
-passport.deserializeUser(function (id, done) {
-  User.findById(id)
-    .then((user) => {
-      done(null, user);
-    })
-    .catch((err) => {
-      done(err);
-    });
-});
+app.use(passport.initialize());
+app.use(passport.session());
 
-passport.use(
-  new GoogleStrategy(
-    {
-      clientID: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "http://localhost:4000/auth/google/private",
-      userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
-    },
-    function (accessToken, refreshToken, profile, cb) {
-      User.findOne({ googleId: profile.id })
-        .exec()
-        .then((user) => {
-          if (!user) {
-            const newUser = new User({
-              googleId: profile.id,
-              googleDisplayName: profile.displayName,
-            });
-            return newUser.save();
-          } else {
-            return user;
-          }
-        })
-        .then((user) => {
-          return cb(null, user);
-        })
-        .catch((err) => {
-          return cb(err);
-        });
-    }
-  )
-);
+require("./controllers/AuthGoogle");
+
 
 app.get(
   "/auth/google",
-  passport.authenticate("google", { scope: ["profile"] })
+  passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
 app.get(
   "/auth/google/private",
-  passport.authenticate("google", { failureRedirect: "/" }),
+  passport.authenticate("google", { scope: ["profile", "email"], failureRedirect: "/" }),
   function (req, res) {
     console.log("Logged In Successfully");
     res.redirect(

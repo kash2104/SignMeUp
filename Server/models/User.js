@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
   },
-  username: {
+  email: {
     type: String,
   },
   password: {
@@ -17,6 +17,18 @@ const userSchema = new mongoose.Schema({
   googleDisplayName: {
     type: String,
   },
+  subHead : [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Event',
+  }],
+  cityManager : [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Event',
+  }],
+  participant : [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Event',
+  }],
 });
 
 userSchema.plugin(passportLocalMongoose);
