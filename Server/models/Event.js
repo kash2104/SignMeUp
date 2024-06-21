@@ -40,7 +40,43 @@ const eventSchema = new mongoose.Schema({
   enddate: {
     type: Date,
   },
-  contactname: {
+  contactName: {
+    type: String,
+  },
+  contactEmail: {
+    type: String,
+  },
+  organizer: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref : 'Organization',
+  },
+  workers : [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Roles',
+    required: true, 
+  }],
+  // subHeads: [{
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'User',
+  //   required: true,
+  // }],
+  // cityManagers: [{
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'User',
+  //   required: true,
+  // }],
+  participants: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  }],
+  location: {
+    type: String,
+  },
+  city : {
+    type: String,
+  },
+  state : {
     type: String,
   },
   slotmetrics: {
