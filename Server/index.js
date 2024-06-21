@@ -17,6 +17,8 @@ const cookieParser = require("cookie-parser");
 
 const { morganMiddleware } = require("./middleware/morganMiddleware");
 const { logger } = require("./utils/logger");
+const CustomError = require("./utils/CustomError");
+const errorController = require("./controllers/ErrorController");
 
 require("dotenv").config();
 
@@ -118,12 +120,47 @@ app.get(
   }
 );
 
+app.get("/user", (req, res) => {
+  try{
+    if(!req.user){
+      console.log("Error Thrown");
+      throw new CustomError("User not found", 404);
+    }
+    return res.status(200).json({
+      success: true,
+      data: req.user
+    });
+  }catch(err){
+    return res.status(404).json({
+      success: false,
+      message: err.message
+    });
+  }
+
+});
+
+app.get("/logout", (req, res) => {
+  req.logout();
+  res.redirect("/");
+});
+
+//error handling middleware
+app.use(errorController);
+
+
 //default route
 app.get("/", (req, res) => {
   return res.json({
     success: true,
     message: "Your app is running successfully",
   });
+});
+
+app.all("*", (req,res)=>{
+  const error = new CustomError(`Can't find ${req.originalUrl} on this server`, 404);
+  error.status = "fail";
+  error.statusCode = 404;
+  next(error);
 });
 
 //activating the server
