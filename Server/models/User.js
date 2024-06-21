@@ -17,6 +17,29 @@ const userSchema = new mongoose.Schema({
   googleDisplayName: {
     type: String,
   },
+  subHead : [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Event',
+  }],
+  cityManager : [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Event',
+  }],
+  participant : [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Event',
+  }],
+  isWorker: {
+    type: Boolean,
+    default: false,
+  },
+  organizationId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Organization',
+    required: function() {
+      return this.isWorker;
+    }
+  }
 });
 
 userSchema.plugin(passportLocalMongoose);
