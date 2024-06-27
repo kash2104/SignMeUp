@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
   },
-  username: {
+  email: {
     type: String,
   },
   password: {
@@ -29,17 +29,7 @@ const userSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Event',
   }],
-  isWorker: {
-    type: Boolean,
-    default: false,
-  },
-  organizationId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Organization',
-    required: function() {
-      return this.isWorker;
-    }
-  }
+
 });
 
 userSchema.plugin(passportLocalMongoose);

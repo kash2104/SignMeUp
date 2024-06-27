@@ -4,8 +4,9 @@ const cors = require("cors");
 
 const eventRoutes = require("./routes/Event");
 const loginRoutes = require("./routes/Auth");
+const loginRoutes = require("./routes/Auth");
 
-const database = require("./config/database");
+const dataBase = require("./config/database");
 
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
@@ -25,7 +26,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 
 //database connection
-database.connect();
+dataBase.connect();
 
 //middlewares
 app.use(express.json());
@@ -37,10 +38,14 @@ app.use(
   })
 );
 // app.use(morganMiddleware);
+// app.use(morganMiddleware);
 
 //mounting the routes
 //1. event controller
 app.use("/api/v1/events", eventRoutes);
+
+//2. login controller
+app.use("/api/v1/auth", loginRoutes);
 
 //2. login controller
 app.use("/api/v1/auth", loginRoutes);
@@ -54,52 +59,11 @@ app.use(
   })
 );
 
-passport.use(User.createStrategy());
-passport.serializeUser(function (user, done) {
-  done(null, user.id);
-});
-passport.deserializeUser(function (id, done) {
-  User.findById(id)
-    .then((user) => {
-      done(null, user);
-    })
-    .catch((err) => {
-      done(err);
-    });
-});
+app.use(passport.initialize());
+app.use(passport.session());
 
-passport.use(
-  new GoogleStrategy(
-    {
-      clientID: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "http://localhost:4000/auth/google/private",
-      userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
-    },
-    function (accessToken, refreshToken, profile, cb) {
-      User.findOne({ googleId: profile.id })
-        .exec()
-        .then((user) => {
-          if (!user) {
-            const newUser = new User({
-              googleId: profile.id,
-              googleDisplayName: profile.displayName,
-              // userName: profile.email
-            });
-            return newUser.save();
-          } else {
-            return user;
-          }
-        })
-        .then((user) => {
-          return cb(null, user);
-        })
-        .catch((err) => {
-          return cb(err);
-        });
-    }
-  )
-);
+require("./controllers/AuthGoogle");
+
 
 app.get(
   "/auth/google",
@@ -115,6 +79,7 @@ app.get(
     // const cookiePayload = req.user;
     // res.cookie("token", cookiePayload);
     res.redirect(
+      `http://localhost:3000/signup/created/all?user_key=${req.user._id}`
       `http://localhost:3000/signup/created/all?user_key=${req.user._id}`
     );
   }
