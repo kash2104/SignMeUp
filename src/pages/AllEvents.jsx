@@ -2,14 +2,18 @@ import React, { useEffect, useState } from "react";
 import { getAllEvents } from "../services/operations/eventAPI";
 import EventCard from "../component/EventCard";
 import { useSearchParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const AllEvents = () => {
-  const [searchParams] = useSearchParams();
-  const sessionID = searchParams.get("user_key");
+  const { token } = useSelector((state) => state.auth);
 
-  if (localStorage.getItem("session_id") === "") {
-    localStorage.setItem("session_id", sessionID);
-  }
+  // const token = req.cookies.token;
+
+  // const sessionID = searchParams.get("user_key");
+
+  // if (localStorage.getItem("session_id") === "") {
+  //   localStorage.setItem("session_id", sessionID);
+  // }
 
   const [allEvents, setAllEvents] = useState([]);
 
@@ -20,8 +24,8 @@ const AllEvents = () => {
       setLoading(true);
 
       try {
-        const result = await getAllEvents(sessionID);
-        console.log("Result : ", result);
+        const result = await getAllEvents(token);
+        // console.log("Result : ", result);
 
         setAllEvents(result);
 
@@ -34,12 +38,7 @@ const AllEvents = () => {
       //   console.log("allEvents", allEvents);
     };
 
-    if (localStorage.getItem("session_id") === sessionID) {
-      console.log("SessionID: ", sessionID);
-      localStorage.setItem("session_id", sessionID);
-
-      fetchAllEvents();
-    }
+    fetchAllEvents();
   }, []);
 
   return (
