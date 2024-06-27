@@ -4,7 +4,6 @@ const cors = require("cors");
 
 const eventRoutes = require("./routes/Event");
 const loginRoutes = require("./routes/Auth");
-const loginRoutes = require("./routes/Auth");
 
 const dataBase = require("./config/database");
 
@@ -38,7 +37,6 @@ app.use(
   })
 );
 // app.use(morganMiddleware);
-// app.use(morganMiddleware);
 
 //mounting the routes
 //1. event controller
@@ -47,8 +45,6 @@ app.use("/api/v1/events", eventRoutes);
 //2. login controller
 app.use("/api/v1/auth", loginRoutes);
 
-//2. login controller
-app.use("/api/v1/auth", loginRoutes);
 
 //GOOGLE AUTH
 app.use(
@@ -67,7 +63,7 @@ require("./controllers/AuthGoogle");
 
 app.get(
   "/auth/google",
-  passport.authenticate("google", { scope: ["profile"] })
+  passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
 app.get(
@@ -79,7 +75,6 @@ app.get(
     // const cookiePayload = req.user;
     // res.cookie("token", cookiePayload);
     res.redirect(
-      `http://localhost:3000/signup/created/all?user_key=${req.user._id}`
       `http://localhost:3000/signup/created/all?user_key=${req.user._id}`
     );
   }
