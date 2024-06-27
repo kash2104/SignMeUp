@@ -46,7 +46,7 @@ exports.getAllEvents = async (req, res) => {
       data: allEvents,
     });
   } catch (error) {
-    logger.error("allEvents error: ", error);
+    console.error("allEvents error: ", error);
     return res.status(500).json({
       success: false,
       message: "Error while getting all the events",
