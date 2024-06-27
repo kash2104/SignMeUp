@@ -3,8 +3,9 @@ const app = express();
 const cors = require("cors");
 
 const eventRoutes = require("./routes/Event");
+const loginRoutes = require("./routes/Auth");
 
-const database = require("./config/database");
+const dataBase = require("./config/database");
 
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
@@ -14,12 +15,24 @@ const passportLocalMongoose = require("passport-local-mongoose");
 
 const cookieParser = require("cookie-parser");
 
+const { morganMiddleware } = require("./middleware/morganMiddleware");
+const {
+  log,
+  warn,
+  error,
+  fatal,
+  debug,
+  event,
+  info,
+  database,
+} = require("./utils/logger");
+
 require("dotenv").config();
 
 const PORT = process.env.PORT || 4000;
 
 //database connection
-database.connect();
+dataBase.connect();
 
 //middlewares
 app.use(express.json());
@@ -30,10 +43,14 @@ app.use(
     credentials: true,
   })
 );
+// app.use(morganMiddleware);
 
 //mounting the routes
 //1. event controller
 app.use("/api/v1/events", eventRoutes);
+
+//2. login controller
+app.use("/api/v1/auth", loginRoutes);
 
 //GOOGLE AUTH
 app.use(
@@ -52,16 +69,19 @@ require("./controllers/AuthGoogle");
 
 app.get(
   "/auth/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
+  passport.authenticate("google", { scope: ["profile"] })
 );
 
 app.get(
   "/auth/google/private",
-  passport.authenticate("google", { scope: ["profile", "email"], failureRedirect: "/" }),
+  passport.authenticate("google", { failureRedirect: "/" }),
   function (req, res) {
     console.log("Logged In Successfully");
+    // //cookie
+    // const cookiePayload = req.user;
+    // res.cookie("token", cookiePayload);
     res.redirect(
-      `http://localhost:3000/signup/created/all?user_key=${req.sessionID}`
+      `http://localhost:3000/signup/created/all?user_key=${req.user._id}`
     );
   }
 );
@@ -76,5 +96,8 @@ app.get("/", (req, res) => {
 
 //activating the server
 app.listen(PORT, () => {
-  console.log(`App is running successfully at port ${PORT}`);
+  log({
+    level: "info",
+    message: `App is running successfully at port ${PORT}`,
+  });
 });
