@@ -42,10 +42,10 @@ passport.use(
               name: profile.displayName,
               email: profile.emails[0].value, // Get the email from profile.emails
             });
-            console.log(profile);
+
             return newUser.save();
           } else {
-            console.log(profile);
+
             return user;
           }
         })

@@ -19,6 +19,16 @@ const { morganMiddleware } = require("./middleware/morganMiddleware");
 const { logger } = require("./utils/logger");
 const CustomError = require("./utils/CustomError");
 const errorController = require("./controllers/ErrorController");
+const {
+  log,
+  warn,
+  error,
+  fatal,
+  debug,
+  event,
+  info,
+  database,
+} = require("./utils/logger");
 
 require("dotenv").config();
 
@@ -70,7 +80,7 @@ app.get(
   "/auth/google/private",
   passport.authenticate("google", { failureRedirect: "/" }),
   function (req, res) {
-    logger.error("Logged In Successfully");
+    console.log("Logged In Successfully");
     // //cookie
     // const cookiePayload = req.user;
     // res.cookie("token", cookiePayload);
@@ -83,7 +93,7 @@ app.get(
 app.get("/user", (req, res) => {
   try{
     if(!req.user){
-      console.log("Error Thrown");
+      error("Error Thrown");
       throw new CustomError("User not found", 404);
     }
     return res.status(200).json({
@@ -117,13 +127,14 @@ app.get("/", (req, res) => {
 });
 
 app.all("*", (req,res)=>{
-  const error = new CustomError(`Can't find ${req.originalUrl} on this server`, 404);
-  error.status = "fail";
-  error.statusCode = 404;
-  next(error);
+  const error1 = new CustomError(`Can't find ${req.originalUrl} on this server`, 404);
+  error1.status = "fail";
+  error1.statusCode = 404;
+  error(error1.message, error1.statusCode)
+  next(error1);
 });
 
 //activating the server
 app.listen(PORT, () => {
-  logger.info(`App is running successfully at port ${PORT}`);
+  info(`Server is running on port ${PORT}`);
 });

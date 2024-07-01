@@ -5,15 +5,16 @@ import { useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const AllEvents = () => {
-  const { token } = useSelector((state) => state.auth);
+  // const { token } = useSelector((state) => state.auth);
 
   // const token = req.cookies.token;
+  const [searchParams] = useSearchParams()
 
-  // const sessionID = searchParams.get("user_key");
+  const sessionID = searchParams.get("user_key");
 
-  // if (localStorage.getItem("session_id") === "") {
-  //   localStorage.setItem("session_id", sessionID);
-  // }
+  if (localStorage.getItem("session_id") === "") {
+    localStorage.setItem("session_id", sessionID);
+  }
 
   const [allEvents, setAllEvents] = useState([]);
 
@@ -24,7 +25,7 @@ const AllEvents = () => {
       setLoading(true);
 
       try {
-        const result = await getAllEvents(token);
+        const result = await getAllEvents(sessionID);
         // console.log("Result : ", result);
 
         setAllEvents(result);
