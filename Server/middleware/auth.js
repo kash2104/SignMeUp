@@ -3,9 +3,8 @@ const jwt = require("jsonwebtoken");
 exports.auth = async (req, res, next) => {
   try {
     const token =
-      req.cookies.token ||
-      req.body.token ||
-      req.header("Authorization").replace("Bearer ", "");
+      req.header("Authorization").replace("Bearer ") ||
+      localStorage.getItem("session_id");
 
     console.log("token: ", token);
 

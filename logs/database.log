@@ -1,0 +1,173 @@
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T18:29:43',
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T18:33:16',
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T18:34:10',
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T18:44:31',
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T18:45:42',
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T18:47:04',
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T18:50:17',
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T18:51:43',
+        'statusCode': 'null'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T18:51:56',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T18:53:44',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T18:54:01',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T18:56:14',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T18:56:52',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T18:59:43',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:00:23',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:01:08',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:01:25',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:01:42',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:03:42',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:05:21',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:06:03',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:07:06',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:07:21',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:08:03',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:09:22',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:09:42',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:10:18',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:13:33',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:14:31',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'DATABASE',
+        'message': 'DB connected successfully',
+        'timestamp': '2024-07-01T19:15:02',
+        'statusCode': 'null' || '500'
+    } 

@@ -38,7 +38,7 @@ exports.getAllEvents = async (req, res) => {
         },
       ],
     });
-    console.log("Running events:", allEvents);
+    // console.log("Running events:", allEvents);
 
     return res.status(200).json({
       success: true,
@@ -46,7 +46,7 @@ exports.getAllEvents = async (req, res) => {
       data: allEvents,
     });
   } catch (error) {
-    logger.error("allEvents error: ", error);
+    consle.error("allEvents error: ", error);
     return res.status(500).json({
       success: false,
       message: "Error while getting all the events",

@@ -1,0 +1,178 @@
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T18:29:04',
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T18:29:42',
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T18:33:14',
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T18:34:09',
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T18:44:29',
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T18:45:40',
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T18:47:03',
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T18:50:15',
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T18:51:42',
+        'statusCode': 'null'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T18:51:55',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T18:53:40',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T18:54:00',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T18:56:13',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T18:56:51',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T18:59:41',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:00:22',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:01:07',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:01:25',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:01:41',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:03:40',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:05:20',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:06:02',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:07:04',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:07:20',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:08:02',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:09:20',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:09:41',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:10:17',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:13:32',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:14:30',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'INFO',
+        'message': 'Server is running on port 4000',
+        'timestamp': '2024-07-01T19:15:01',
+        'statusCode': 'null' || '500'
+    } 

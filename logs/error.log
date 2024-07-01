@@ -1,0 +1,36 @@
+{
+        'level': 'ERROR',
+        'message': 'Unidentified error',
+        'timestamp': '2024-07-01T19:04:23',
+        'statusCode': '[object Object]' || '500'
+    } 
+{
+        'level': 'ERROR',
+        'message': 'PRofile Error',
+        'timestamp': '2024-07-01T19:06:15',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'ERROR',
+        'message': 'PRofile Error',
+        'timestamp': '2024-07-01T19:08:16',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'ERROR',
+        'message': 'PRofile Error',
+        'timestamp': '2024-07-01T19:09:53',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'ERROR',
+        'message': 'PRofile Error',
+        'timestamp': '2024-07-01T19:10:29',
+        'statusCode': 'null' || '500'
+    } 
+{
+        'level': 'ERROR',
+        'message': 'PRofile Error',
+        'timestamp': '2024-07-01T19:13:44',
+        'statusCode': 'null' || '500'
+    } 
